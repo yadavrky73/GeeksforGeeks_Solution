@@ -1,0 +1,12 @@
+for i in range(int(input())):
+    k=int(input())
+    l=input().split()
+    q=0
+    for i in range(k):
+        for j in range(k-1,-1,-1):
+            if int(l[i])<=int(l[j]):
+                q=max(q,j-i)
+                break
+    
+ print(q)
+ 
