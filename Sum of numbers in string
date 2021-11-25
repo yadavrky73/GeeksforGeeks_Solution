@@ -1,0 +1,15 @@
+def findSum(s):
+        t="0"
+        Sum=0
+        for i in s:
+            if (i.isdigit()):
+                t+=i
+            else:
+                Sum+=int(t)
+                t="0"
+        aa=Sum+int(t)
+        return aa
+t=int(input())
+for i in range(t):
+   s=intput()
+   print(findSum(s))
