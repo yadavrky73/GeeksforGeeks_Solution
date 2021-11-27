@@ -1,0 +1,26 @@
+ def equilibrium(self,arr, n): 
+        # code here
+        if n==0:
+            return 'NO'
+        s=sum(arr)
+        s1=0
+        for i in range(n-1):
+            s=s-arr[i]
+            if s1==s:
+                return 'YES'
+            else:
+                s1+=arr[i]
+        else:
+            return 'NO'
+
+if __name__ == '__main__': 
+
+    
+    tc=int(input())
+    while tc > 0:
+        n=int(input())
+        a=list(map(int , input().strip().split()))
+        ob = Solution()
+        ans=ob.equilibrium(a, n)
+        print(ans)
+        tc=tc-1
