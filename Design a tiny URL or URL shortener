@@ -1,0 +1,13 @@
+for _ in range(int(input())):
+    a = int(input())
+    d = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    c = a
+    r = []
+    while c>0:
+        r.append(c%62)
+        c= c//62
+    r=r[::-1]
+    for i in r:
+        print(d[i],end = '')
+    print()
+    print(a)
