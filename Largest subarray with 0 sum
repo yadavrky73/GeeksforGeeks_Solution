@@ -1,0 +1,21 @@
+def maxLen(n, arr):
+    #Code here
+    d = {}
+    d[0] = -1
+    s = 0
+    l = 0
+    m = 0
+    for i in range(n):
+        s += arr[i]
+        if s in d:
+            l = i-d[s]
+            m = max(l, m)
+        else:
+            d[s] = i
+    return m
+if __name__=='__main__':
+    t= int(input())
+    for i in range(t):
+        n = int(input())
+        arr = list(map(int, input().strip().split()))
+        print(maxLen(n ,arr))
