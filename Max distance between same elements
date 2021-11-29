@@ -1,0 +1,18 @@
+class Solution:
+    def maxDistance(self, arr, n):
+        # Code here
+        d={}
+        m=0
+        for i in range(n):
+            if arr[i] not in d.keys():
+                d[arr[i]]=i
+            else:
+                m=max(m,i-d[arr[i]])
+        return m
+if __name__=='__main__':
+    t = int(input())
+    for i in range(t):
+        n = int(input())
+        arr = list(map(int, input().strip().split()))
+        ob=Solution()
+        print(ob.maxDistance(arr, n))
