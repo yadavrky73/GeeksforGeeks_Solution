@@ -1,0 +1,24 @@
+def minDist(arr, n, x, y):
+    rx, ry = -1, -1
+    ans = 9999999
+    
+    for i in range(n):
+        if arr[i]==x:
+            rx=i
+            if ry!=-1:
+                ans = min(ans, abs(rx-ry))
+        elif arr[i]==y:
+            ry=i
+            if rx!=-1:
+                ans = min(ans, abs(rx-ry))
+        
+    if ans==9999999:
+        return -1
+    return ans
+if __name__=='__main__':
+    t = int(input())
+    for i in range(t):
+        n = int(input())
+        arr = list(map(int, input().strip().split()))
+        x,y = list(map(int, input().strip().split()))
+        print(minDist(arr, n, x, y))
