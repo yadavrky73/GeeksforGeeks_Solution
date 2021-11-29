@@ -1,0 +1,25 @@
+class Solution:
+    def minSum(self, arr, n):
+        # Your code goes here
+        arr=sorted(arr)
+        a=0
+        b=0
+        for i in range(n):
+            if i%2==0:
+                b*=10
+                b+=arr[i]
+            else:
+                a*=10
+                a+=arr[i]
+        
+        return a+b
+import heapq as hq
+
+if __name__ == '__main__':
+    T = int(input())
+
+    for tcs in range(T):
+        n = int(input())
+        arr = [int(x) for x in input().split()]
+        ob=Solution()
+        print(ob.minSum(arr,n))
