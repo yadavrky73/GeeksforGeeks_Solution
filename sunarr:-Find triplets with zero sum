@@ -1,0 +1,17 @@
+class Solution:
+    #Function to find triplets with zero sum.    
+    def findTriplets(self, arr, n):
+        #code here
+        arr=sorted(arr)
+        for i in range(n-2):
+            j=i+1
+            k=n-1
+            while(j<k):
+                s=arr[i]+arr[j]+arr[k]
+                if s==0:
+                    return 1
+                elif s>0:
+                    k-=1
+                else:
+                    j+=1
+        return 0
