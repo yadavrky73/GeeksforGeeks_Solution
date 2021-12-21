@@ -1,0 +1,10 @@
+class Solution:
+    def getIndexInSortedArray(self, arr, n, k):
+        # Your code goes here
+        c=0
+        for i in range(n):
+            if arr[i]<arr[k]:
+                c+=1
+            if arr[i]==arr[k] and i<k:
+                c+=1
+        return c
