@@ -1,0 +1,17 @@
+import math
+class Solution:
+	def CommonFactor(self, n):
+		# Code here
+		t=n
+		c=0
+		for i in range(2,n+1):
+		    if t%i==0:
+		        c+=1
+		    elif (math.gcd(i,n)!=1):
+		        c+=1
+		#print(math.gcd(4,6))
+        #print(math.gcd(12,24))
+        #print(math.gcd(8,12))
+        #print(math.gcd(12,23))
+        #print(math.gcd(6,15))
+		return c
