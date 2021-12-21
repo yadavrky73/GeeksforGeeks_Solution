@@ -1,0 +1,19 @@
+def PalinArray(arr ,n):
+    # Code here
+    b=0
+    for i in range(n):
+        if(str(arr[i])==str(arr[i])[::-1]):
+            b=1
+        else:
+            b=0
+            break
+    return b
+if __name__=='__main__':
+    t=int(input())
+    for i in range(t):
+        n = int(input())
+        arr = list(map(int, input().strip().split()))
+        if PalinArray(arr, n):
+            print(1)
+        else:
+            print(0)
