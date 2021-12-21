@@ -1,0 +1,19 @@
+class Soltion{
+    public:
+    int removeConsecutiveSame(vector <string > v) 
+    {
+        // Your code goes here
+        stack<string>ss;
+        for(int i=0;i<v.size();i++)
+        {
+            if(!ss.empty() && ss.top()==v[i])
+            {
+                ss.pop();
+            }
+            else{
+                ss.push(v[i]);
+            }
+        }
+        return s.size();
+    } 
+};
