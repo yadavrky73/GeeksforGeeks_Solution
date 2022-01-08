@@ -1,0 +1,27 @@
+class Solution:
+    def convertToWords(self, n):
+        # code here
+        
+        one = ["", "one ", "two ", "three ", "four ", "five ", "six ", "seven ", 
+        "eight ", "nine ", "ten ", "eleven ", "twelve ", "thirteen ", "fourteen ",
+        "fifteen ", "sixteen ", "seventeen ", "eighteen ", "nineteen "]
+        ten = ["", "", "twenty ", "thirty ", "forty ", "fifty ", "sixty ", "seventy ",
+        "eighty ", "ninety "]
+        def nn(n,s):
+            str=""
+            if n>19:
+                str+=ten[(n//10)]+one[(n%10)]
+            else:
+                str+=one[n]
+            if n:
+                str+=s
+            return str
+        ot = ""
+        ot+=nn((n//10000000),"crore ")
+        ot+=nn(((n//100000)%100),"lakh ")
+        ot+=nn(((n//1000)%100),"thousand ")
+        ot+=nn(((n//100)%10),"hundred ")
+        if(n>100 and n%100):
+            ot+="and "
+        ot+=nn((n%100),"")
+        return ot
