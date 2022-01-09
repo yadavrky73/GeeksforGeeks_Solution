@@ -1,0 +1,34 @@
+class Solution {
+  public:
+  int count(int Arr[],int N,int value)
+   {
+       if(N<2)
+          return 0;
+       sort(Arr,Arr+N);
+       int count=0;
+       for(int i=0;i<N-2;i++)
+       {
+           int low=i+1;
+           int high=N-1;
+           while(low<high)
+           {
+               int target=Arr[i]+Arr[low]+Arr[high];
+               if(target>value)
+               {
+                   high--;
+               }
+               else
+               {
+                   count=count+(high-low);
+                   low++;
+               }
+           }
+       }
+       return count;
+   }
+   int countTriplets(int Arr[], int N, int L, int R) {
+       int left=count(Arr,N,L-1);
+       int right=count(Arr,N,R);
+       return right-left;
+   }
+};
