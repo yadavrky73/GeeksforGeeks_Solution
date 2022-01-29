@@ -1,0 +1,29 @@
+q--1
+class Solution:
+    def getMinDiff(self, arr, n, k):
+        # code here
+        arr=sorted(arr)
+        s=arr[-1]-arr[0]
+        for i in range (1,n):
+           
+            mn=min(arr[0]+k,arr[i]-k)
+            mx=max(arr[-1]-k,arr[i-1]+k)
+            s=min(s,mx-mn)
+              
+        return s
+ q---2
+ 
+ 
+ class Solution:
+    def getMinDiff(self, arr, n, k):
+        # code here
+        arr=sorted(arr)
+        s=arr[-1]-arr[0]
+        for i in range (1,n):
+            if arr[i] >= k:
+                mn=min(arr[0]+k,arr[i]-k)
+                mx=max(arr[-1]-k,arr[i-1]+k)
+                s=min(s,mx-mn)
+              
+        return s
+#{ 
